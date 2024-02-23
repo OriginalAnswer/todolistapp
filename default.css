@@ -1,0 +1,72 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	/* font: inherit; */
+	vertical-align: baseline;
+}
+input, select, textarea{
+    border: 0;
+    outline: none;
+    background: none;
+}
+ol,ul,li{
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style-type: none;
+}
+/* ============= */
+a, button{
+    border: 0;
+    outline: none;
+    transition: transform .1s;
+    color: inherit;
+}
+
+a:active, button:active{
+    transform: scale(.92);
+}
+button:hover{
+    cursor: pointer;
+}
+html{
+    ::-webkit-scrollbar{
+        display: none;
+      }
+}
+/* ============= */
+*{
+    /* font-family: 'Pretendard-Regular', Helvetica,sans-serif ,serif; */
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}  
+.thinline{
+    transform: scale(1,.05);
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #000000;
+}
+.dashline{
+    transform: scale(1,.1);
+    margin: 10px 0;
+    border: dashed 1px #000000;
+    stroke-dasharray: 15%2c 16%2c 19;
+}
