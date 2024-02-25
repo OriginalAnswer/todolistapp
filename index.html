@@ -3,132 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo list</title>
+    <title>투두리스트</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    @import url(./default.css);
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-:root{
-    --border: 1px #000 solid;
-    --border3: 3px #000 solid;
-}
-html{
-    width: 100vw;
-    height: 100vh;
-}
-body{
-    width: 100%;height: 100%;
-    font-family: 'Pretendard-Regular', Helvetica,sans-serif ,serif;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-header{
-    position: fixed;
-    top: 0;left: 0;
-    width: 100%;
-    padding: 10px;
-    border: var(--border);
-    text-align: center;
-}
-.headr-menu{
-    /* border: var(--border); */
-    width: 20px;height: 20px;
-    float: right;
-}
-/* 메인 */
-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;height: 100%;
-    overflow-x: scroll;
-    gap: 10px;
-}
-.card{
-    --card-h: 550px;
-    border: var(--border);
-    padding: 5px;
-    width: 200px;height: var(--card-h);
-    overflow: hidden;
-    position: relative;
-}
-.card-header{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px 6px;
-    text-align: center;
-}
-.card-header:hover{
-    cursor: pointer;
-}
-/* 리스트 */
-.listbox{
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-.todolist-container,
-.donelist{
-    border: var(--border);
-    border-radius: 20px;
-    width: 100%;
-    height: 50%;
-    padding: 3px;
-}
-.todolist-container{
-    display: flex;
-    flex-direction: column;
-    padding: 10px 5px 5px 5px;
-    gap: 5px;
-}
-.todolist{
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    display: flex;
-    flex-direction: column-reverse;
-}
-.todolist li{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-}
-.todolist li span{
-    width: 100%;
-}
-.todo-input-container{
-    border: var(--border);
-    width: 100%;
-    background-color: #ffffffca;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5px;
-    border-radius: 15px;
-}
-.todo-input{
-    --todoinput-h:30px;
-    height: var(--todoinput-h);
-    /* border: var(--border); */
-    width: 100%;
-    padding: 0 5px;
-}
-
-.listbar{
-    width: 50px;
-    border: var(--border3);
-    border-radius: 3px;
-    margin: 5px auto;
-}
-</style>
 <body>
     <header>
         <div class="headr-menu"><i class="fa-solid fa-bars"></i></div>
@@ -140,8 +17,10 @@ main{
             <div class="card-header">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
+            <input type="checkbox" class="dpnone" id="cb-card-statu">
             <div class="listbox">
-                <div class="todolist-container">
+
+                <div class="todo-section">
                     <ul class="todolist">
                         <li>
                             <label for="list123456">
@@ -163,11 +42,16 @@ main{
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </form>
+
                 </div>
+                <label class="listbar-container" for="cb-card-statu">
+                    <div class="listbar"></div>
+                </label>
 
-                <div class="listbar"></div>
+                
 
-                <ul class="donelist">
+
+                <ul class="done-section">
 
                 </ul>
             </div>
@@ -176,6 +60,10 @@ main{
 
 
     </main>
+
+    <nav>
+        mm
+    </nav>
     <script src="./app.js"></script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>

@@ -70,3 +70,9 @@ html{
     border: dashed 1px #000000;
     stroke-dasharray: 15%2c 16%2c 19;
 }
+
+/*  */
+.dpnone{
+    display: none;
+    z-index: 100;
+}
