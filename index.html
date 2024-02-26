@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="headr-menu"><i class="fa-solid fa-bars"></i></div>
-        <button id="addCard">+</button>
+        <!-- <button id="addCard">+</button> -->
     </header>
     <main>
 
@@ -33,12 +33,12 @@
                         </li>
                     </ul>
                     
-                    <form id="form-${appId}" class="todo-input-container" onsubmit="appTask()" >
-                        <label for="input-${appId}">
+                    <form name="todoinput" id="form-${appId}" class="todo-input-container" onsubmit="addTask()" >
+                        <label for="input-todo">
                             <i class="fa-solid fa-pen"></i>
                         </label>
-                        <input type="text" id="input-${appId}" class="todo-input" required>
-                        <button type="submit">
+                        <input name="todoinput" type="text" id="input-todo" class="todo-input" required>
+                        <button name="todoinput" type="submit">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </form>
@@ -64,7 +64,7 @@
     <nav>
         mm
     </nav>
-    <script src="./app.js"></script>
+    <script src="./app2.js"></script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
 </html>

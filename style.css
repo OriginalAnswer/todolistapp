@@ -7,10 +7,11 @@
     font-style: normal;
 }
 :root{
-    --border: 1px #000 solid;
+    --border: 1px #000000 solid;
     --border3: 3px #000 solid;
     --clrb: #000;
     --clrf: #ffffff;
+    --thm-clr: #2467b5;
 }
 html{
     width: 100vw;
@@ -22,6 +23,7 @@ body{
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow: hidden;
 }
 .headr-menu{
     /* border: var(--border); */
@@ -30,11 +32,11 @@ body{
 }
 header{
     top: 0;left: 0;
-    border-bottom: var(--border);
+    /* border-bottom: var(--border); */
 }
 nav{
     bottom: 0;left: 0;
-    border-top: var(--border);
+    /* border-top: var(--border); */
 }
 header,nav{
     position: fixed;
@@ -46,26 +48,30 @@ header,nav{
     align-items: center;
     justify-content: space-between;
     background-color: var(--clrf);
+    z-index: 100;
+    display: none;
 }
 /* 메인 */
 main{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;height: 100%;
+    width: 100%;
+    height: 100%;
     overflow-x: scroll;
     gap: 10px;
-    background-color: #000;
+    background-color: var(--thm-clr);
 }
 .card{
-    --card-h: 550px;
-    border-top: var(--border);
-    border-bottom: var(--border);
-    padding: 5px 0;
+    /* --card-h: calc(100% - 120px); */
+    --card-h: 100%;
+    /* border-top: var(--border);
+    border-bottom: var(--border); */
+    /* padding: 0 5px; */
     margin: 0 10px;
     width: clamp(250px, 100%,450px);
     /* height: var(--card-h); */
-    height: 85%;
+    height: var(--card-h);
     overflow: hidden;
     position: relative;
 }
@@ -89,7 +95,7 @@ main{
 
     .todo-section,
     .done-section{
-        border: var(--border);
+        /* border: var(--border); */
         width: 100%;
         height: calc(100% - 150px);
         padding: 3px;
@@ -97,10 +103,12 @@ main{
         background-color: var(--clrf);
     }
     .todo-section{
+        border-top: none;
         overflow-y: hidden;
         border-radius: 0 0 30px 30px;
     }
     .done-section{
+        border-bottom: none;
         overflow: hidden;
         border-radius: 30px 30px 0 0;
     }
@@ -111,14 +119,14 @@ main{
         height: 150px;
         position: absolute;
         top: 0;left: 0;
-        transition: all ease-in-out .5s;
     }
     .todo-section::after{
-        background: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0));
-        transform: translateY(-100%);
+        background: linear-gradient(var(--thm-clr),rgba(0, 0, 0, 0));
+        transform: translateY(-65%);
+        /* height: 50px; */
     }
     .done-section::after{
-        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 1));
+        background: linear-gradient(rgba(0, 0, 0, 0),var(--thm-clr));
         /* transform: translateY(100%); */
     }
 /*  */
@@ -181,6 +189,11 @@ main{
     margin: 5px auto;
     cursor: pointer;
 }
+
+.done-section::after,
+.todo-section::after{
+    transition: all ease-in-out .5s;
+}
 #cb-card-statu:checked ~ .listbox{
     transform: translateY(-55%);
     transform: translateY(calc(-100% + 300px - 16px));
@@ -190,6 +203,7 @@ main{
     transform: translateY(0%);
 }
 #cb-card-statu:checked ~ .listbox .done-section::after{
-    height: 100%;
-    transform: translateY(100%);
+    top: calc(100% - 150px);
+    /* height: 100%; */
+    transform: translateY(65%);
 }
