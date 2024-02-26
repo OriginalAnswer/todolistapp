@@ -48,15 +48,15 @@ header,nav{
     z-index: 110;
 }
 .header-menu{
-    width: 100%;
     height: 100%;
+    width: clamp(0%,100%,550px);
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     background-color: var(--clrf);
-    border-bottom: var(--border);
-    border-bottom-color: var(--thm-clr);
-    transform: translateY(-100%);
+    border-left: var(--border);
+    border-left-color: var(--thm-clr);
+    transform: translateX(101%);
     transition: transform .3s ease-in-out;
     z-index: 101;
 }
@@ -109,7 +109,7 @@ header,nav{
     border-color: #00000000;
 }
 #header-menu-btn:checked ~ .header-menu{
-    transform: translateY(0);
+    transform: translateX(0);
 }
 /* 메인 +++++++++++++++++++++++++++++++++++++++++++*/
 main{
@@ -172,20 +172,21 @@ main{
         overflow: hidden;
         border-radius: 30px 30px 0 0;
     }
-    .done-section::after,
-    .todo-section::after{
+    .todo-section-shade,
+    .done-section-shade{
         content: "";
         width: 100%;
         height: 150px;
         position: absolute;
         top: 0;left: 0;
+        cursor: pointer;
     }
-    .todo-section::after{
+    .todo-section-shade{
         background: linear-gradient(var(--thm-clr),rgba(0, 0, 0, 0));
         transform: translateY(-65%);
         /* height: 50px; */
     }
-    .done-section::after{
+    .done-section-shade{
         background: linear-gradient(rgba(0, 0, 0, 0),var(--thm-clr));
         /* transform: translateY(100%); */
     }
@@ -259,19 +260,19 @@ main{
     cursor: pointer;
 }
 
-.done-section::after,
-.todo-section::after{
+.done-section-shade,
+.todo-section-shade{
     transition: all ease-in-out .5s;
 }
 #cb-card-statu:checked ~ .listbox{
     transform: translateY(-55%);
     transform: translateY(calc(-100% + 300px - 16px));
 }
-#cb-card-statu:checked ~ .listbox .todo-section::after{
+#cb-card-statu:checked ~ .listbox .todo-section-shade{
     top: calc(100% - 150px);
     transform: translateY(0%);
 }
-#cb-card-statu:checked ~ .listbox .done-section::after{
+#cb-card-statu:checked ~ .listbox .done-section-shade{
     top: calc(100% - 150px);
     /* height: 100%; */
     transform: translateY(65%);
