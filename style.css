@@ -41,10 +41,11 @@ header,nav{
     padding: 0 15px;
     text-align: center;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
     /* background-color: var(--clrf); */
-    z-index: 102;
+    z-index: 110;
 }
 .header-menu{
     width: 100%;
@@ -53,6 +54,8 @@ header,nav{
     top: 0;
     left: 0;
     background-color: var(--clrf);
+    border-bottom: var(--border);
+    border-bottom-color: var(--thm-clr);
     transform: translateY(-100%);
     transition: transform .3s ease-in-out;
     z-index: 101;
