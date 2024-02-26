@@ -7,12 +7,26 @@ function addTask(e){
     const listID = 'list' + String(date); 
     const v = document.getElementById('input-todo');
     const li = document.createElement('li');
+    const btnX = document.createElement('button');
+
+    li.id = listID;
+    btnX.textContent = 'x';
+
     li.innerHTML = `
-    <label for="${listID}">
-        <input type="checkbox">
+    <input type="checkbox" id='${listID}span' class='list-cb'>
+    <label for="${listID}span">
+        <span class='list-span'>${v.value}</span>
     </label>
-    <span id='${listID}'>${v.value}</span>
-    <button>x</button>
     `;
+    li.appendChild(btnX);
     todolists.appendChild(li);
+    
+    btnX.addEventListener('click', ()=>{
+        const confirmDelete = confirm('정말로 삭제할까요?');
+        if (confirmDelete) {
+            li.remove();
+                }
+            }
+    )
+    v.value = '';
 }

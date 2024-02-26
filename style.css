@@ -7,11 +7,12 @@
     font-style: normal;
 }
 :root{
-    --border: 1px #000000 solid;
+    --border: 1px #000 solid;
+    --border1-5: 1.5px #000 solid;
     --border3: 3px #000 solid;
     --clrb: #000;
     --clrf: #ffffff;
-    --thm-clr: #2467b5;
+    --thm-clr: #fc4700;
 }
 html{
     width: 100vw;
@@ -24,11 +25,6 @@ body{
     flex-direction: column;
     position: relative;
     overflow: hidden;
-}
-.headr-menu{
-    /* border: var(--border); */
-    width: 20px;height: 20px;
-    float: right;
 }
 header{
     top: 0;left: 0;
@@ -47,11 +43,72 @@ header,nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--clrf);
-    z-index: 100;
-    display: none;
+    /* background-color: var(--clrf); */
+    z-index: 102;
 }
-/* 메인 */
+.header-menu{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--clrf);
+    transform: translateY(-100%);
+    transition: transform .3s ease-in-out;
+    z-index: 101;
+}
+.header-menu-btn{
+    --header-menu-size: 35px;
+    border: var(--border);
+    border-radius: var(--header-menu-size);
+    border-color: var(--thm-clr);
+    width: var(--header-menu-size);
+    height: var(--header-menu-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px var(--thm-clr);
+    color: var(--thm-clr);
+    cursor: pointer;
+    position: relative;
+    transition: transform .5s ease-in-out;
+}
+.menubar{
+    width: 45%;
+    border: var(--border1-5);
+    border-color: var(--thm-clr);
+    border-radius: var(--header-menu-size);
+    transition: all .5s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+        .menubar1{top: 33%;}
+        .menubar2{top: 50%;}
+        .menubar3{top: 67%;}
+#header-menu-btn:checked ~ header .header-menu-btn{
+    transform: rotateZ(45deg);
+}
+#header-menu-btn:checked ~ header .header-menu-btn .menubar1{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotateZ(-90deg);
+}
+#header-menu-btn:checked ~ header .header-menu-btn .menubar3{
+    top: 50%;
+    left: 50%;
+    transform:  translateX(-50%) translateY(-50%);
+}
+#header-menu-btn:checked ~ header .header-menu-btn .menubar2{
+    border-color: #00000000;
+}
+#header-menu-btn:checked ~ .header-menu{
+    transform: translateY(0);
+}
+/* 메인 +++++++++++++++++++++++++++++++++++++++++++*/
 main{
     display: flex;
     justify-content: center;
@@ -136,21 +193,30 @@ main{
     padding: 10px 8px;
     gap: 5px;
 }
-.todolist{
+.todolist-container{
     width: 100%;
     height: 100%;
-    padding: 10px;
     display: flex;
     flex-direction: column-reverse;
+}
+.todolist{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .todolist li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
-.todolist li span{
+.todolist li label{
     width: 100%;
+}
+.list-span{
+    font-size: 1.3em;
 }
 .todo-input-container{
     border: var(--border);
@@ -206,4 +272,11 @@ main{
     top: calc(100% - 150px);
     /* height: 100%; */
     transform: translateY(65%);
+}
+
+
+/* 리스트 클릭 가운데 줄 */
+.list-cb:checked + label .list-span {
+    text-decoration-line:line-through;
+    color: #ababab;
 }

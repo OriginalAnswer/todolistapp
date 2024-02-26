@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <input type="checkbox" id="header-menu-btn" class="dpnone">
+    <div class="header-menu"></div>
+
     <header>
-        <div class="headr-menu"><i class="fa-solid fa-bars"></i></div>
+        <label class="header-menu-btn" for="header-menu-btn">
+            <!-- <i class="fa-solid fa-bars"></i> -->
+            <div class="menubar menubar1"></div>
+            <div class="menubar menubar2"></div>
+            <div class="menubar menubar3"></div>
+        </label>
         <!-- <button id="addCard">+</button> -->
     </header>
     <main>
@@ -21,17 +29,11 @@
             <div class="listbox">
 
                 <div class="todo-section">
-                    <ul class="todolist">
-                        <li>
-                            <label for="list123456">
-                                <input type="checkbox">
-                            </label>
-                            <span>
-                                test
-                            </span>
-                            <button>x</button>
-                        </li>
-                    </ul>
+                    <div class="todolist-container">
+                        <ul class="todolist">
+                            
+                        </ul>
+                    </div>
                     
                     <form name="todoinput" id="form-${appId}" class="todo-input-container" onsubmit="addTask()" >
                         <label for="input-todo">
