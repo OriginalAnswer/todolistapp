@@ -17,6 +17,7 @@ function addTask(e){
     <label for="${listID}span">
         <span class='list-span'>${v.value}</span>
     </label>
+    <i class="fa-solid fa-pen"></i>
     `;
     li.appendChild(btnX);
     todolists.appendChild(li);

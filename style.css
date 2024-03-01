@@ -220,7 +220,7 @@ main{
     width: 100%;
 }
 .list-span{
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 .todo-input-container{
     border: var(--border);
